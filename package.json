@@ -1,0 +1,25 @@
+{
+  "name": "employee_tracker",
+  "version": "1.0.0",
+  "description": "employee tracker",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Burch531/Employee_Tracker.git"
+  },
+  "keywords": [
+    "tracker"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Burch531/Employee_Tracker/issues"
+  },
+  "homepage": "https://github.com/Burch531/Employee_Tracker#readme",
+  "dependencies": {
+    "inquirer": "^8.0.0"
+  }
+}
