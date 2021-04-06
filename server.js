@@ -15,3 +15,22 @@ const connection = mysql.createConnection({
     console.log("Connected as Id" + connection.threadId)
     startInquire();
 });
+
+function startInquire() {
+  inquirer.prompt([
+  {
+  type: "list",
+  message: "What would you like to do?",
+  name: "choice",
+  choices: [
+            "View All Employees?", 
+            "View All Employee's By Roles?",
+            "View all Emplyees By Deparments", 
+            "Update Employee",
+            "Add Employee?",
+            "Add Role?",
+            "Add Department?"
+          ]
+  }
+])
+}
