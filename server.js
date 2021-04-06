@@ -38,6 +38,9 @@ function startInquire() {
         viewEmployees();
         break;
 
+        case "View All Employee's By Roles?":
+          viewRoles();
+        break;
 
 
     }
@@ -51,4 +54,13 @@ function viewEmployees() {
       console.table(res)
       startPrompt()
     })
+}
+
+function viewRoles() {
+  connection.query("SELECT employee.first_name, employee.last_name, role.title AS Title FROM employee JOIN role ON employee.role_id = role.id;", 
+  function(err, res) {
+  if (err) throw err
+  console.table(res)
+  startPrompt()
+  })
 }
