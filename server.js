@@ -1,6 +1,6 @@
 const inquirer = require("inquirer")
 const mysql = require("mysql")
-const cTable = require('console.table');
+// const cTable = require('console.table');
 
 const connection = mysql.createConnection({
   host: "localhost",
@@ -212,4 +212,28 @@ function addRole() {
 
     });
   });
+  }
+
+  function addDepartment() { 
+
+    inquirer.prompt([
+        {
+          name: "name",
+          type: "input",
+          message: "What Department would you like to add?"
+        }
+    ]).then(function(res) {
+        var query = connection.query(
+            "INSERT INTO department SET ? ",
+            {
+              name: res.name
+            
+            },
+            function(err) {
+                if (err) throw err
+                console.table(res);
+                startPrompt();
+            }
+        )
+    })
   }
