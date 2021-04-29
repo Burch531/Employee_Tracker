@@ -1,13 +1,13 @@
 const inquirer = require("inquirer")
 const mysql = require("mysql")
-// const cTable = require('console.table');
+const cTable = require('console.table');
 
 const connection = mysql.createConnection({
   host: "localhost",
-  port: 3000,
+  port: 3306,
   user: "root",
   password: "JRobert202",
-  database: "employee_trackerDB"
+  database: "employee_trackerdb"
 });
 
 connection.connect(function (err) {
@@ -91,6 +91,28 @@ function viewDepartments() {
       console.table(res)
       startPrompt()
     })
+}
+var roleArr = [];
+function selectRole() {
+  connection.query("SELECT * FROM role", function(err, res) {
+    if (err) throw err
+    for (var i = 0; i < res.length; i++) {
+      roleArr.push(res[i].title);
+    }
+
+  })
+  return roleArr;
+}
+var managersArr = [];
+function selectManager() {
+  connection.query("SELECT first_name, last_name FROM employee WHERE manager_id IS NULL", function(err, res) {
+    if (err) throw err
+    for (var i = 0; i < res.length; i++) {
+      managersArr.push(res[i].first_name);
+    }
+
+  })
+  return managersArr;
 }
 
 function addEmployee() {
