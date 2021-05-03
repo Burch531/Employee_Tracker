@@ -30,4 +30,7 @@ https://github.com/Burch531/Employee_Tracker
 ## GitHub
 (https://github.com/Burch531)
 
-![EmployeeTrackerScreenshot](./assets/Employee.PNG)
+![EmployeeScreenshot](./assets/Employee.PNG)
+
+Video Walk Through
+https://github.com/Burch531/Employee_Tracker/issues/1#issue-874993771
